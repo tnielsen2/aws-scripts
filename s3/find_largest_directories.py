@@ -32,7 +32,7 @@ try:
     for result in paginator.paginate(Bucket=bucket_name, Prefix=''):
         for key in result.get('Contents', []):
             folder = key['Key'].split('/')[0]
-            print(f'Key {key["Key"]} in folder {folder}. {bytes_to_megabytes(key["Size"])} MB')
+            #print(f'Key {key["Key"]} in folder {folder}. {bytes_to_megabytes(key["Size"])} MB')
 
             if folder in top_level_folders:
                 top_level_folders[folder] += bytes_to_megabytes(key['Size'])
