@@ -47,7 +47,7 @@ for image in images:
         # ec2.deregister_image(ImageId=image['ImageId'])
 
 # Loop through all RDS snapshots and print those that are more than 14 days old
-db_snapshots = rds.describe_db_snapshots(SnapshotType='all')['DBSnapshots']
+db_snapshots = rds.describe_db_snapshots(SnapshotType='awsbackup')['DBSnapshots']
 db_snapshots = sorted(db_snapshots, key=lambda x: x['SnapshotCreateTime'])
 for db_snapshot in db_snapshots:
     snapshot_date = db_snapshot['SnapshotCreateTime'].replace(tzinfo=pytz.utc)
