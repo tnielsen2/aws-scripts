@@ -18,7 +18,7 @@ s3 = boto3.resource('s3')
 now = datetime.datetime.now(pytz.utc)
 
 # Calculate the time 24 hours ago
-days_ago = now - datetime.timedelta(days=4)
+days_ago = now - datetime.timedelta(days=30)
 
 # Iterate over all objects in the bucket
 for obj in s3.Bucket(bucket_name).objects.all():
