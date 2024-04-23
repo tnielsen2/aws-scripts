@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import pytz
 
 # usage
-# python3 ./aws-backup/delete_old_backup_recovery_points.py --region us-east-2 --profile yam-pxg --vault uat-a-us-east-2-backups-vault --plan uat-a-tier-3-archives
+# python3 ./aws-backup/delete_old_backup_recovery_points.py --region us-east-2 --profile foo-bar --vault vault-name --plan plan-name
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Delete AWS backup recovery points that are more than 14 days old.')
 parser.add_argument('--region', help='AWS region to use')
